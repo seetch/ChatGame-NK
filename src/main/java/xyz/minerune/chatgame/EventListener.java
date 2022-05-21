@@ -4,7 +4,7 @@ import cn.nukkit.Player;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerChatEvent;
-import xyz.minerune.api.utils.Message;
+import me.hteppl.tools.format.Message;
 import xyz.minerune.economy.Economy;
 
 public class EventListener implements Listener {
@@ -28,7 +28,7 @@ public class EventListener implements Listener {
                             players.sendMessage(Message.clean("§6", " Игрок %0 первым отправил строку в чат.", player.getName()));
                         }
 
-                        Economy.getInstance().add(player, (double) plugin.getReward());
+                        Economy.getInstance().add(player, plugin.getReward());
                         event.setCancelled();
                         plugin.resetGame();
                     }
@@ -38,7 +38,7 @@ public class EventListener implements Listener {
                             players.sendMessage(Message.clean("§6", " Игрок %0 первым составил слово %1 из заданных букв.", player.getName(), plugin.getResult()));
                         }
 
-                        Economy.getInstance().add(player, (double) plugin.getReward());
+                        Economy.getInstance().add(player, plugin.getReward());
                         event.setCancelled();
                         plugin.resetGame();
                     }
@@ -48,7 +48,7 @@ public class EventListener implements Listener {
                             players.sendMessage(Message.clean("§6", " Игрок %0 первым решил пример. Решение: %1.", player.getName(), plugin.getResult()));
                         }
 
-                        Economy.getInstance().add(player, (double) plugin.getReward());
+                        Economy.getInstance().add(player, plugin.getReward());
                         event.setCancelled();
                         plugin.resetGame();
                     }
@@ -59,7 +59,7 @@ public class EventListener implements Listener {
                             players.sendMessage(Message.clean("§6", " Игрок %0 первым расшифровал слово %1.", player.getName(), plugin.getResult()));
                         }
 
-                        Economy.getInstance().add(player, (double) plugin.getReward());
+                        Economy.getInstance().add(player, plugin.getReward());
                         event.setCancelled();
                         plugin.resetGame();
                     }
