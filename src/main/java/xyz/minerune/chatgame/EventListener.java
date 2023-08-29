@@ -4,7 +4,7 @@ import cn.nukkit.Player;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerChatEvent;
-import me.hteppl.tools.format.Message;
+import me.seetch.format.Format;
 import xyz.minerune.economy.Economy;
 
 public class EventListener implements Listener {
@@ -25,30 +25,30 @@ public class EventListener implements Listener {
                 case FLASH:
                     if (message.equalsIgnoreCase(plugin.getResult())) {
                         for (Player players : plugin.getServer().getOnlinePlayers().values()) {
-                            players.sendMessage(Message.clean("§6", " Игрок %0 первым отправил строку в чат.", player.getName()));
+                            players.sendMessage(Format.MATERIAL_DIAMOND.message("Игрок %0 первым отправил строку в чат.", player.getName()));
                         }
 
-                        Economy.getInstance().add(player, plugin.getReward());
+                        Economy.addMoney(player, plugin.getReward());
                         event.setCancelled();
                         plugin.resetGame();
                     }
                 case DECODE:
                     if (message.equalsIgnoreCase(plugin.getResult())) {
                         for (Player players : plugin.getServer().getOnlinePlayers().values()) {
-                            players.sendMessage(Message.clean("§6", " Игрок %0 первым составил слово %1 из заданных букв.", player.getName(), plugin.getResult()));
+                            players.sendMessage(Format.MATERIAL_DIAMOND.message("Игрок %0 первым составил слово %1 из заданных букв.", player.getName(), plugin.getResult()));
                         }
 
-                        Economy.getInstance().add(player, plugin.getReward());
+                        Economy.addMoney(player, plugin.getReward());
                         event.setCancelled();
                         plugin.resetGame();
                     }
                 case MATH:
                     if (message.equalsIgnoreCase(plugin.getResult())) {
                         for (Player players : plugin.getServer().getOnlinePlayers().values()) {
-                            players.sendMessage(Message.clean("§6", " Игрок %0 первым решил пример. Решение: %1.", player.getName(), plugin.getResult()));
+                            players.sendMessage(Format.MATERIAL_DIAMOND.message("Игрок %0 первым решил пример. Ответ: %1.", player.getName(), plugin.getResult()));
                         }
 
-                        Economy.getInstance().add(player, plugin.getReward());
+                        Economy.addMoney(player, plugin.getReward());
                         event.setCancelled();
                         plugin.resetGame();
                     }
@@ -56,10 +56,10 @@ public class EventListener implements Listener {
                 case HANGMAN:
                     if (message.equalsIgnoreCase(plugin.getResult())) {
                         for (Player players : plugin.getServer().getOnlinePlayers().values()) {
-                            players.sendMessage(Message.clean("§6", " Игрок %0 первым расшифровал слово %1.", player.getName(), plugin.getResult()));
+                            players.sendMessage(Format.MATERIAL_DIAMOND.message("Игрок %0 первым расшифровал слово %1.", player.getName(), plugin.getResult()));
                         }
 
-                        Economy.getInstance().add(player, plugin.getReward());
+                        Economy.addMoney(player, plugin.getReward());
                         event.setCancelled();
                         plugin.resetGame();
                     }
