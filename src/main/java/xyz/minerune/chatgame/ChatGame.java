@@ -26,7 +26,7 @@ public class ChatGame extends PluginBase {
 
     @Override
     public void onEnable() {
-        this.getServer().getScheduler().scheduleRepeatingTask(new GameTask(this, Arrays.asList(GameType.FLASH, GameType.DECODE, GameType.MATH, GameType.HANGMAN)), 20 * 60 * 9);
+        this.getServer().getScheduler().scheduleRepeatingTask(new GameTask(this, Arrays.asList(GameType.FLASH, GameType.DECODE, GameType.MATH, GameType.HANGMAN)), 20 * 60 * 5);
         this.getServer().getPluginManager().registerEvents(new EventListener(this), this);
 
         this.current = GameType.NONE;
