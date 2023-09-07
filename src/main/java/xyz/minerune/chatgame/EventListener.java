@@ -25,7 +25,7 @@ public class EventListener implements Listener {
                 case FLASH:
                     if (message.equalsIgnoreCase(plugin.getResult())) {
                         for (Player players : plugin.getServer().getOnlinePlayers().values()) {
-                            players.sendMessage(Format.MATERIAL_DIAMOND.message("Игрок %0 первым отправил строку в чат.", player.getName()));
+                            players.sendMessage(Format.MATERIAL_DIAMOND.colorize("Игрок %0 первым отправил строку в чат.", player.getName()));
                         }
 
                         Economy.addMoney(player, plugin.getReward());
@@ -35,7 +35,7 @@ public class EventListener implements Listener {
                 case DECODE:
                     if (message.equalsIgnoreCase(plugin.getResult())) {
                         for (Player players : plugin.getServer().getOnlinePlayers().values()) {
-                            players.sendMessage(Format.MATERIAL_DIAMOND.message("Игрок %0 первым составил слово %1 из заданных букв.", player.getName(), plugin.getResult()));
+                            players.sendMessage(Format.MATERIAL_DIAMOND.colorize("Игрок %0 первым составил слово %1 из заданных букв.", player.getName(), plugin.getResult()));
                         }
 
                         Economy.addMoney(player, plugin.getReward());
@@ -45,7 +45,7 @@ public class EventListener implements Listener {
                 case MATH:
                     if (message.equalsIgnoreCase(plugin.getResult())) {
                         for (Player players : plugin.getServer().getOnlinePlayers().values()) {
-                            players.sendMessage(Format.MATERIAL_DIAMOND.message("Игрок %0 первым решил пример. Ответ: %1.", player.getName(), plugin.getResult()));
+                            players.sendMessage(Format.MATERIAL_DIAMOND.colorize("Игрок %0 первым решил пример. Ответ: %1.", player.getName(), plugin.getResult()));
                         }
 
                         Economy.addMoney(player, plugin.getReward());
@@ -56,7 +56,7 @@ public class EventListener implements Listener {
                 case HANGMAN:
                     if (message.equalsIgnoreCase(plugin.getResult())) {
                         for (Player players : plugin.getServer().getOnlinePlayers().values()) {
-                            players.sendMessage(Format.MATERIAL_DIAMOND.message("Игрок %0 первым расшифровал слово %1.", player.getName(), plugin.getResult()));
+                            players.sendMessage(Format.MATERIAL_DIAMOND.colorize("Игрок %0 первым расшифровал слово %1.", player.getName(), plugin.getResult()));
                         }
 
                         Economy.addMoney(player, plugin.getReward());

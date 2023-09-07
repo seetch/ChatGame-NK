@@ -43,7 +43,7 @@ public class ChatGame extends PluginBase {
         setResult(result);
 
         for (Player player : this.getServer().getOnlinePlayers().values()) {
-            player.sendMessage(Format.MATERIAL_DIAMOND.message("Первым отправьте строку %0 в чат и получите %1$", result, String.valueOf(reward)));
+            player.sendMessage(Format.MATERIAL_DIAMOND.colorize("Первым отправьте строку %0 в чат и получите %1$", result, String.valueOf(reward)));
         }
     }
 
@@ -68,7 +68,7 @@ public class ChatGame extends PluginBase {
         String shuffled = shuffle(word);
 
         for (Player player : this.getServer().getOnlinePlayers().values()) {
-            player.sendMessage(Format.MATERIAL_DIAMOND.message("Первым составьте слово из заданных букв %0 и получите %1$", shuffled, String.valueOf(reward)));
+            player.sendMessage(Format.MATERIAL_DIAMOND.colorize("Первым составьте слово из заданных букв %0 и получите %1$", shuffled, String.valueOf(reward)));
         }
     }
 
@@ -111,7 +111,7 @@ public class ChatGame extends PluginBase {
         }
 
         for (Player player : this.getServer().getOnlinePlayers().values()) {
-            player.sendMessage(Format.MATERIAL_DIAMOND.message("Первым решите пример %0 и получите %1$", example, String.valueOf(reward)));
+            player.sendMessage(Format.MATERIAL_DIAMOND.colorize("Первым решите пример %0 и получите %1$", example, String.valueOf(reward)));
         }
     }
 
@@ -127,7 +127,7 @@ public class ChatGame extends PluginBase {
 
         for (Player player : this.getServer().getOnlinePlayers().values()) {
             player.sendMessage(getResult());
-            player.sendMessage(Format.MATERIAL_DIAMOND.message("Первым расшифруйте слово %0 и получите %1$", changed, String.valueOf(reward)));
+            player.sendMessage(Format.MATERIAL_DIAMOND.colorize("Первым расшифруйте слово %0 и получите %1$", changed, String.valueOf(reward)));
         }
     }
 
@@ -147,7 +147,7 @@ public class ChatGame extends PluginBase {
         try {
             var1 = String.valueOf(var3.eval(var1));
         } catch (ScriptException var5) {
-            var5.printStackTrace();
+            getLogger().debug("equationSolver", var5);
         }
 
         return var1;
